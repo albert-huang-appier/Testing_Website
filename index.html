@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Website</title>
+    <meta name="description" content="A simple starter website." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="logo" href="./index.html" aria-label="Home">
+          <span class="logo-mark" aria-hidden="true">◼︎</span>
+          <span>My Website</span>
+        </a>
+
+        <nav class="nav" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="button ghost" id="themeToggle" type="button" aria-label="Toggle theme">
+          Theme
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero">
+        <div class="container hero-inner">
+          <div>
+            <p class="eyebrow">Simple starter website</p>
+            <h1 class="headline">Launch a clean website in minutes.</h1>
+            <p class="subhead">
+              This is a tiny, modern template (HTML + CSS + JS). Edit the text, swap colors, and
+              you’re live.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button primary" href="#contact">Get in touch</a>
+              <a class="button" href="#features">See features</a>
+            </div>
+
+            <div class="stats" role="list" aria-label="Highlights">
+              <div class="stat" role="listitem">
+                <div class="stat-num">1</div>
+                <div class="stat-label">page</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat-num">0</div>
+                <div class="stat-label">frameworks</div>
+              </div>
+              <div class="stat" role="listitem">
+                <div class="stat-num">100%</div>
+                <div class="stat-label">customizable</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card preview" aria-label="Preview card">
+            <div class="card-top">
+              <div class="dots" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
+              <div class="url">mywebsite.local</div>
+            </div>
+            <div class="card-body">
+              <div class="chip">Fast</div>
+              <div class="chip">Responsive</div>
+              <div class="chip">Accessible</div>
+              <div class="preview-box">
+                <div class="preview-line w-80"></div>
+                <div class="preview-line w-55"></div>
+                <div class="preview-line w-70"></div>
+              </div>
+              <button class="button small primary" type="button" id="demoToast">
+                Click me
+              </button>
+              <p class="muted small-note">Tip: try the “Theme” button in the header.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="features">
+        <div class="container">
+          <h2>Features</h2>
+          <div class="grid">
+            <article class="tile">
+              <h3>Clean layout</h3>
+              <p>Hero, feature grid, about section, and a small contact form.</p>
+            </article>
+            <article class="tile">
+              <h3>Mobile friendly</h3>
+              <p>Looks great on phones, tablets, and desktops.</p>
+            </article>
+            <article class="tile">
+              <h3>Light / dark</h3>
+              <p>Theme toggle with your preference saved automatically.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="about">
+        <div class="container two-col">
+          <div>
+            <h2>About</h2>
+            <p>
+              Replace this with your story: what you do, who you help, and what makes you
+              different.
+            </p>
+            <ul class="checklist">
+              <li>Simple starter files</li>
+              <li>Easy to customize</li>
+              <li>No build tools needed</li>
+            </ul>
+          </div>
+          <div class="tile callout">
+            <h3>Quick edit</h3>
+            <p>
+              Open <code>index.html</code> and change the headline + buttons. Open
+              <code>styles.css</code> to change colors.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="contact">
+        <div class="container">
+          <h2>Contact</h2>
+          <p class="muted">This form is a demo (no backend). It shows a “sent” message.</p>
+
+          <form class="form" id="contactForm">
+            <label>
+              <span>Name</span>
+              <input name="name" type="text" autocomplete="name" required />
+            </label>
+            <label>
+              <span>Email</span>
+              <input name="email" type="email" autocomplete="email" required />
+            </label>
+            <label class="full">
+              <span>Message</span>
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <div class="full form-actions">
+              <button class="button primary" type="submit">Send message</button>
+              <p class="muted" id="formStatus" aria-live="polite"></p>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p class="muted">© <span id="year"></span> My Website</p>
+        <a class="muted" href="#main">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>
+
