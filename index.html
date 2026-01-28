@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>My Website</title>
-    <meta name="description" content="A simple starter website." />
+    <title>Testing Shop</title>
+    <meta name="description" content="A frontend-only demo e-commerce store (HTML + CSS + JS)." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,155 +33,165 @@
       <div class="container header-inner">
         <a class="logo" href="./index.html" aria-label="Home">
           <span class="logo-mark" aria-hidden="true">◼︎</span>
-          <span>My Website</span>
+          <span>Testing Shop</span>
         </a>
 
-        <nav class="nav" aria-label="Primary">
-          <a href="#features">Features</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-actions">
+          <label class="search" aria-label="Search products">
+            <span class="sr-only">Search</span>
+            <input id="searchInput" type="search" placeholder="Search products..." autocomplete="off" />
+          </label>
 
-        <button class="button ghost" id="themeToggle" type="button" aria-label="Toggle theme">
-          Theme
-        </button>
+          <button class="button ghost" id="themeToggle" type="button" aria-label="Toggle theme">
+            Theme
+          </button>
+
+          <button class="button primary cart-button" id="cartToggle" type="button" aria-label="Open cart">
+            Cart <span class="badge" id="cartCount" aria-label="Items in cart">0</span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="main">
-      <section class="hero">
+      <section class="hero hero-store">
         <div class="container hero-inner">
           <div>
-            <p class="eyebrow">Simple starter website</p>
-            <h1 class="headline">Launch a clean website in minutes.</h1>
+            <p class="eyebrow">Frontend-only e-commerce demo</p>
+            <h1 class="headline">Shop modern essentials.</h1>
             <p class="subhead">
-              This is a tiny, modern template (HTML + CSS + JS). Edit the text, swap colors, and
-              you’re live.
+              Browse products, add to cart, and “checkout” — everything runs in your browser
+              (cart saved in localStorage).
             </p>
 
             <div class="hero-actions">
-              <a class="button primary" href="#contact">Get in touch</a>
-              <a class="button" href="#features">See features</a>
+              <a class="button primary" href="#shop">Shop now</a>
+              <button class="button" type="button" id="randomPick">Pick for me</button>
             </div>
 
             <div class="stats" role="list" aria-label="Highlights">
               <div class="stat" role="listitem">
-                <div class="stat-num">1</div>
-                <div class="stat-label">page</div>
+                <div class="stat-num" id="statProducts">0</div>
+                <div class="stat-label">products</div>
               </div>
               <div class="stat" role="listitem">
                 <div class="stat-num">0</div>
-                <div class="stat-label">frameworks</div>
+                <div class="stat-label">backend</div>
               </div>
               <div class="stat" role="listitem">
-                <div class="stat-num">100%</div>
-                <div class="stat-label">customizable</div>
+                <div class="stat-num">1</div>
+                <div class="stat-label">page</div>
               </div>
             </div>
           </div>
 
-          <div class="card preview" aria-label="Preview card">
+          <div class="card preview" aria-label="Cart preview">
             <div class="card-top">
               <div class="dots" aria-hidden="true">
                 <span></span><span></span><span></span>
               </div>
-              <div class="url">mywebsite.local</div>
+              <div class="url">testing-shop.local</div>
             </div>
             <div class="card-body">
-              <div class="chip">Fast</div>
-              <div class="chip">Responsive</div>
-              <div class="chip">Accessible</div>
+              <div class="chip">Free shipping over $50</div>
+              <div class="chip">7-day returns</div>
               <div class="preview-box">
                 <div class="preview-line w-80"></div>
                 <div class="preview-line w-55"></div>
                 <div class="preview-line w-70"></div>
               </div>
               <button class="button small primary" type="button" id="demoToast">
-                Click me
+                Demo toast
               </button>
-              <p class="muted small-note">Tip: try the “Theme” button in the header.</p>
+              <p class="muted small-note">Tip: open the Cart and try the promo code <code>WELCOME10</code>.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="features">
+      <section class="section" id="shop" aria-label="Shop">
         <div class="container">
-          <h2>Features</h2>
-          <div class="grid">
-            <article class="tile">
-              <h3>Clean layout</h3>
-              <p>Hero, feature grid, about section, and a small contact form.</p>
-            </article>
-            <article class="tile">
-              <h3>Mobile friendly</h3>
-              <p>Looks great on phones, tablets, and desktops.</p>
-            </article>
-            <article class="tile">
-              <h3>Light / dark</h3>
-              <p>Theme toggle with your preference saved automatically.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section alt" id="about">
-        <div class="container two-col">
-          <div>
-            <h2>About</h2>
-            <p>
-              Replace this with your story: what you do, who you help, and what makes you
-              different.
-            </p>
-            <ul class="checklist">
-              <li>Simple starter files</li>
-              <li>Easy to customize</li>
-              <li>No build tools needed</li>
-            </ul>
-          </div>
-          <div class="tile callout">
-            <h3>Quick edit</h3>
-            <p>
-              Open <code>index.html</code> and change the headline + buttons. Open
-              <code>styles.css</code> to change colors.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="contact">
-        <div class="container">
-          <h2>Contact</h2>
-          <p class="muted">This form is a demo (no backend). It shows a “sent” message.</p>
-
-          <form class="form" id="contactForm">
-            <label>
-              <span>Name</span>
-              <input name="name" type="text" autocomplete="name" required />
-            </label>
-            <label>
-              <span>Email</span>
-              <input name="email" type="email" autocomplete="email" required />
-            </label>
-            <label class="full">
-              <span>Message</span>
-              <textarea name="message" rows="5" required></textarea>
-            </label>
-            <div class="full form-actions">
-              <button class="button primary" type="submit">Send message</button>
-              <p class="muted" id="formStatus" aria-live="polite"></p>
+          <div class="section-head">
+            <div>
+              <h2>Shop</h2>
+              <p class="muted">Filter, sort, and add items to your cart.</p>
             </div>
-          </form>
+
+            <div class="controls" aria-label="Shop controls">
+              <label class="control">
+                <span class="control-label">Category</span>
+                <select id="categorySelect">
+                  <option value="all">All</option>
+                </select>
+              </label>
+
+              <label class="control">
+                <span class="control-label">Sort</span>
+                <select id="sortSelect">
+                  <option value="featured">Featured</option>
+                  <option value="price-asc">Price: low → high</option>
+                  <option value="price-desc">Price: high → low</option>
+                  <option value="rating-desc">Rating</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="grid products" id="productGrid" aria-live="polite"></div>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container footer-inner">
-        <p class="muted">© <span id="year"></span> My Website</p>
-        <a class="muted" href="#main">Back to top</a>
+        <p class="muted">© <span id="year"></span> Testing Shop</p>
+        <a class="muted" href="#shop">Back to shop</a>
       </div>
     </footer>
+
+    <!-- Product modal -->
+    <dialog class="modal" id="productModal" aria-label="Product details">
+      <form method="dialog" class="modal-inner">
+        <button class="icon-button modal-close" value="close" aria-label="Close">✕</button>
+        <div class="modal-content" id="productModalContent"></div>
+      </form>
+    </dialog>
+
+    <!-- Cart drawer -->
+    <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
+    <aside class="drawer" id="cartDrawer" aria-label="Cart" aria-hidden="true">
+      <div class="drawer-head">
+        <h2 class="drawer-title">Your cart</h2>
+        <button class="icon-button" id="cartClose" type="button" aria-label="Close cart">✕</button>
+      </div>
+
+      <div class="drawer-body">
+        <div class="cart-items" id="cartItems"></div>
+
+        <div class="cart-summary">
+          <div class="promo">
+            <label class="control" for="promoInput">
+              <span class="control-label">Promo code</span>
+              <div class="promo-row">
+                <input id="promoInput" type="text" placeholder="WELCOME10" autocomplete="off" />
+                <button class="button" id="applyPromo" type="button">Apply</button>
+              </div>
+              <p class="muted small-note" id="promoStatus" aria-live="polite"></p>
+            </label>
+          </div>
+
+          <div class="totals" aria-label="Totals">
+            <div class="total-row"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+            <div class="total-row"><span>Discount</span><span id="discount">-$0.00</span></div>
+            <div class="total-row"><span>Shipping</span><span id="shipping">$0.00</span></div>
+            <div class="total-row grand"><span>Total</span><span id="total">$0.00</span></div>
+          </div>
+
+          <button class="button primary checkout" id="checkoutBtn" type="button">Checkout (demo)</button>
+          <p class="muted small-note">No payment processed. This is a frontend demo.</p>
+        </div>
+      </div>
+    </aside>
   </body>
 </html>
 
